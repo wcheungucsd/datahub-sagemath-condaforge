@@ -21,6 +21,8 @@ USER root
 RUN apt-get -y clean && apt-get -y update && apt-get -y upgrade
 
 
+USER jovyan
+
 ### Install sagemath via condaforge method
 ### Per https://doc.sagemath.org/html/en/installation/conda.html#sec-installation-conda
 
@@ -30,7 +32,10 @@ RUN bash Miniforge3-$(uname)-$(uname -m).sh -b
 
 ### Install sagemath
 RUN mamba create -n sage sage python=3.12
-RUN conda activate sage
+
+RUN mamba init
+RUN mamba bash
+RUN mamba activate sage
 RUN sage --version
 
 
