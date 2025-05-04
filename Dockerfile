@@ -34,10 +34,15 @@ RUN bash Miniforge3-$(uname)-$(uname -m).sh -b
 RUN mamba create -n sage sage python=3.12
 
 RUN mamba init
-RUN bash
-RUN source .bashrc
-RUN mamba activate sage
-RUN sage --version
+
+#RUN bash
+#RUN source .bashrc
+
+RUN bash -c 'mamba activate sage'
+RUN bash -c 'sage --version'
+
+#RUN mamba activate sage
+#RUN sage --version
 
 
 # 3) install packages using notebook user
