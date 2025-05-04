@@ -34,7 +34,7 @@ RUN bash Miniforge3-$(uname)-$(uname -m).sh -b
 RUN mamba create -n sage sage python=3.12
 
 RUN mamba init
-RUN mamba bash
+RUN bash
 RUN mamba activate sage
 RUN sage --version
 
