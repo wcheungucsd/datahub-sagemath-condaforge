@@ -38,11 +38,13 @@ RUN mamba init
 #RUN bash
 #RUN source .bashrc
 
-RUN bash -c 'mamba activate sage'
-RUN bash -c 'sage --version'
+#RUN bash -c 'mamba activate sage'
+#RUN bash -c 'sage --version'
 
 #RUN mamba activate sage
 #RUN sage --version
+
+CMD ["mamba activate sage", "sage --version"]
 
 
 # 3) install packages using notebook user
