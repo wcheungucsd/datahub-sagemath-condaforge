@@ -35,8 +35,8 @@ RUN mamba create -n sage sage python=3.12
 
 RUN mamba init
 
-RUN bash --login -c 'echo am-in-sub-bash; exit 0'
-#RUN bash --login -c 'mamba activate sage; sage --version; exit'
+RUN bash --login -c 'echo am-in-bash-subshell; which mamba; exit 0'
+RUN bash --login -c 'echo begin-mamba-activate-sage; mamba activate sage; echo end-mamba-activate-sage; sage --version; exit 0'
 
 #RUN source .bashrc
 
