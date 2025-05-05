@@ -27,7 +27,7 @@ USER jovyan
 ### Per https://doc.sagemath.org/html/en/installation/conda.html#sec-installation-conda
 
 ### Install miniforge
-RUN curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh
+RUN curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" \\
 RUN bash Miniforge3-$(uname)-$(uname -m).sh -b
 
 ### Install sagemath
