@@ -35,7 +35,8 @@ RUN mamba create -n sage sage python=3.12
 
 RUN mamba init
 
-#RUN bash
+RUN bash --login -c 'mamba activate sage; sage --version; exit'
+
 #RUN source .bashrc
 
 #RUN bash -c 'mamba activate sage'
@@ -44,7 +45,7 @@ RUN mamba init
 #RUN mamba activate sage
 #RUN sage --version
 
-CMD ["mamba activate sage", "sage --version"]
+CMD ["mamba", "activate", "sage"]
 
 
 # 3) install packages using notebook user
